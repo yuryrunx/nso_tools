@@ -23,7 +23,7 @@ class NsoVrfParser():
             self.__print_csv(item) # csv
                 
         elif str(software) == 'cisco-ios':
-            item = self.__ios_vr(hostname)
+            item = self.__ios_vrf(hostname)
             self.__print_csv(item) # csv
            
 
