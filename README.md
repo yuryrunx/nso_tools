@@ -19,9 +19,12 @@ nt = NsoTools(nso_path='{path/to}/src/ncs/pyapi/', login='admin', password='admi
 # Tools
 
 nt.tools.synk_from(hostname)            # stdout. Синхронизирует NSO устройства от реального девайса. Выведет лог в stdout
-nt.tools.get_device_list(keywords)      # return. Вернет список устройств, у которых keywords входит в Hostname 
+nt.tools.get_device_list(keywords)      # return. Вернет две переменные. Список устройств, у которых keywords входит в Hostname, колличество устройств.
+# Interface
 nt.interfaces.show(hostname)            # stdout. Вернет все интерфейсы на устройстве (hostname)
+# VRF
 nt.vrf.show(hostname)                   # stdout. Вернет все VRF на устройстве (hostname)
+nt.vrf.list_vrfs(hostname)              # Вернет list=[] содержащий dict={}. [{name=..., import=..., export...}, {}, {}]
 ```
 
 

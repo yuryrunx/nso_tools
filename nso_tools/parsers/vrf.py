@@ -25,6 +25,26 @@ class NsoVrfParser():
         elif str(software) == 'cisco-ios':
             item = self.__ios_vrf(hostname)
             self.__print_csv(item) # csv
+            
+            
+    def list_vrfs(self, hostname):
+        """ Альтернативное представление show() вернет список набитый dict{} """
+        nso_utils = NsoUtils(self.conf)
+        software = nso_utils.get_device_family(hostname)   
+        
+        all_vrf = []
+        
+        if str(software) == 'cisco-ios-xr':
+            item = self.__ios_xr_vrf(hostname)
+            all_vrf += item 
+            
+                
+        elif str(software) == 'cisco-ios':
+            item = self.__ios_vrf(hostname)
+            all_vrf += item 
+        
+        return all_vrf
+        
            
 
     def __ios_xr_vrf(self, hostname):       
