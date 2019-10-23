@@ -29,6 +29,23 @@ class NsoInterfaceParser():
         elif str(software) == 'cisco-ios':
             item = self.__ios_intf(hostname)
             self.__print_csv(item) # csv
+            
+    def list_interfaces(self, hostname):
+        """ Альтернативное представление show() вернет список набитый dict{} """
+        nso_utils = NsoUtils(self.conf)
+        software = nso_utils.get_device_family(hostname)
+        
+        list_of_interfaces = []
+        
+        if str(software) == 'cisco-ios-xr':
+            item = self.__ios_xr_intf(hostname)
+            list_of_interfaces += item
+                
+        elif str(software) == 'cisco-ios':
+            item = self.__ios_intf(hostname)
+            list_of_interfaces += item
+        
+        return list_of_interfaces
     
                         
                     
