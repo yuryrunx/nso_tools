@@ -64,10 +64,12 @@ class NsoInterfaceParser():
                     be_subif_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['Bundle-Ether-subinterface']['Bundle-Ether']
                     te_subif_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['TenGigE-subinterface']['TenGigE']
                     gi_subif_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['GigabitEthernet-subinterface']['GigabitEthernet']
+                    
                     hu_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['HundredGigE']
                     te_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['TenGigE']
                     gi_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['GigabitEthernet']
                     lo_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['Loopback']
+                    bvi_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['BVI']
                     
                     # Регистрируем 
                     interface_range = [be_subif_list, te_subif_list, gi_subif_list, hu_list, te_list, gi_list, lo_list]
