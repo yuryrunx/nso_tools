@@ -72,7 +72,7 @@ class NsoInterfaceParser():
                     bvi_list = root.devices.device[hostname]['config']['cisco-ios-xr:interface']['BVI']
                     
                     # Регистрируем 
-                    interface_range = [be_subif_list, te_subif_list, gi_subif_list, hu_list, te_list, gi_list, lo_list]
+                    interface_range = [be_subif_list, te_subif_list, gi_subif_list, hu_list, te_list, gi_list, lo_list, bvi_list]
                     
                     # Список в который добавляем интерфейсы, который вернется как рузультат работы метода
                     device_interfaces = []    
