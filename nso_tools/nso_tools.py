@@ -11,6 +11,7 @@ from nso_tools.parsers.interfaces import NsoInterfaceParser
 from nso_tools.parsers.vrf import NsoVrfParser
 from nso_tools.parsers.nso_utils import NsoUtils
 from nso_tools.parsers.bgp_neighbors import NsoBgpNeighborsParser
+from nso_tools.parsers.static_route import NsoStaticrouteParser
 
 class NsoTools(object):
      
@@ -23,6 +24,7 @@ class NsoTools(object):
         self.vrf = NsoVrfParser(self.conf)
         self.tools = Tools(self.conf)
         self.bgp = NsoBgpNeighborsParser(self.conf)
+        self.static = NsoStaticrouteParser(self.conf)
 
         
 

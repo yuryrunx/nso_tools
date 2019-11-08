@@ -28,6 +28,8 @@ nt.vrf.show(hostname)                   # stdout. Вернет все VRF на �
 nt.vrf.list_vrfs(hostname)              # Вернет list=[] содержащий dict={}. [{name='', import='', export=''}, {}, {}]
 # BGP neighbors (into VRF)
 nt.bgp.neighbor_list(hostname)          # Вернет list=[] содержащий dict={}. 
+# L3VPN static routes
+nt.static.routes(hostname)              # Вернет list=[] содержащий dict={}.
 ```
 
 
@@ -38,6 +40,7 @@ nt.bgp.neighbor_list(hostname)          # Вернет list=[] содержащ�
 
 # ChangeLog
 
+- 08.11.19 - `nt.static.routes(hostname)` method added
 - 08.11.19 - `nt.bgp.neighbor_list(hostname)` method added
 - 23.10.19 - `nt.interfaces.list_interfaces(hostname)` method added
 - 22.10.19 - `nt.vrf.list_vrfs(hostname)` method added
@@ -127,3 +130,32 @@ nt.bgp.neighbor_list(hostname)          # Вернет list=[] содержащ�
         },
 }
 ```	
+
+## 
+
+`nt.static.routes(hostname)`
+
+Вернет список из словарей с ключами: 
+
+**XR:**
+```python 
+[
+    {
+        'network': '183.12.3.32/32', 
+        'interface': 'Te0/0/0/1.100', 
+        'next_hop': '183.12.0.1', 
+        'description': 'to Infinity'
+    },
+    ...
+]
+```
+
+**IOS:** 
+```python
+{
+    'network': '10.10.173.0/27', 
+    'interface': 'GigabitEthernet1/27.20', 
+    'next_hop': '10.10.173.35', 
+    'description': '' # TODO.
+    }
+```
