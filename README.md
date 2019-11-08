@@ -40,7 +40,7 @@ nt.static.routes(hostname)              # Вернет list=[] содержащ�
 
 # ChangeLog
 
-- 08.11.19 - IOS Po subinterfaces parser added
+- 08.11.19 - IOS Port-channel-subinterface parser added
 - 08.11.19 - `nt.static.routes(hostname)` method added
 - 08.11.19 - `nt.bgp.neighbor_list(hostname)` method added
 - 23.10.19 - `nt.interfaces.list_interfaces(hostname)` method added
