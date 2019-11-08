@@ -40,6 +40,8 @@ class NsoStaticrouteParser():
                         for route in vrf['address-family']['ipv4']['unicast']['routes']:
                             
                             static_route = {}
+                            static_route['hostname'] = str(hostname)
+                            static_route['vrf'] = str(vrf['name']).upper()
                             static_route['network'] = str(route['net'])
                             static_route['interface'] = str(route['interface'])
                             static_route['next_hop'] = str(route['address'])
@@ -65,6 +67,8 @@ class NsoStaticrouteParser():
                             
                             mask = self.__bit_mask(route['mask'])
                             
+                            static_route['hostname'] = str(hostname)
+                            static_route['vrf'] = str(vrf['name']).upper()
                             static_route['network'] = str(route['prefix']) + '' + mask 
                             static_route['interface'] = str(route['interface'])
                             static_route['next_hop'] = str(route['forwarding-address'])

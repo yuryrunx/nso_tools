@@ -40,6 +40,7 @@ nt.static.routes(hostname)              # Вернет list=[] содержащ�
 
 # ChangeLog
 
+- 08.11.19 - Hostname and vrf has added to `nt.static.routes(hostname) ` and Hostname has added to `nt.bgp.neighbor_list(hostname) `
 - 08.11.19 - IOS Port-channel-subinterface parser added
 - 08.11.19 - `nt.static.routes(hostname)` method added
 - 08.11.19 - `nt.bgp.neighbor_list(hostname)` method added
@@ -142,6 +143,8 @@ nt.static.routes(hostname)              # Вернет list=[] содержащ�
 ```python 
 [
     {
+        'hostname': 'PE01', 
+        'vrf': 'OAM',
         'network': '183.12.3.32/32', 
         'interface': 'Te0/0/0/1.100', 
         'next_hop': '183.12.0.1', 
@@ -154,6 +157,8 @@ nt.static.routes(hostname)              # Вернет list=[] содержащ�
 **IOS:** 
 ```python
 {
+    'hostname': 'PE01', 
+    'vrf': 'OAM',
     'network': '10.10.173.0/27', 
     'interface': 'GigabitEthernet1/27.20', 
     'next_hop': '10.10.173.35', 

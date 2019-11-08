@@ -83,7 +83,7 @@ class NsoBgpNeighborsParser():
                                 # Исключаем все не VPN BGP neighbors 
                                 if vrf['name'] != 'all':    
                                     #print(router_as['id'], vrf['name'], bgp_atr, route_policy)
-                                    
+                                    bgp['hostname'] = str(hostname)
                                     #bgp['router_as'] = str(router_as['id'])
                                     bgp['vrf'] = vrf['name'].upper()
                                     bgp['neighbor'] = str(neighbor['id'])
@@ -143,6 +143,7 @@ class NsoBgpNeighborsParser():
                                     
                                     # BGP - в него собираем остальные элементы
                                     bgp = {}
+                                    bgp['hostname'] = str(hostname)
                                     bgp['router_as'] = str(router_as['as-no'])
                                     bgp['vrf'] = str(vrf['name']).upper()
                                     bgp['neighbor'] = str(neighbor['id'])
