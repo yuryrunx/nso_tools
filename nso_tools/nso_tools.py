@@ -10,6 +10,7 @@ from nso_tools.nso_sys.tools import Tools
 from nso_tools.parsers.interfaces import NsoInterfaceParser
 from nso_tools.parsers.vrf import NsoVrfParser
 from nso_tools.parsers.nso_utils import NsoUtils
+from nso_tools.parsers.bgp_neighbors import NsoBgpNeighborsParser
 
 class NsoTools(object):
      
@@ -21,6 +22,7 @@ class NsoTools(object):
         self.interfaces = NsoInterfaceParser(self.conf)
         self.vrf = NsoVrfParser(self.conf)
         self.tools = Tools(self.conf)
+        self.bgp = NsoBgpNeighborsParser(self.conf)
 
         
 
