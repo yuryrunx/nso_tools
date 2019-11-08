@@ -26,11 +26,8 @@ nt.interfaces.list_interfaces(hostname) # Вернет list=[] содержащ�
 # VRF
 nt.vrf.show(hostname)                   # stdout. Вернет все VRF на устройстве (hostname)
 nt.vrf.list_vrfs(hostname)              # Вернет list=[] содержащий dict={}. [{name='', import='', export=''}, {}, {}]
-```
-
 # BGP neighbors (into VRF)
-```
-nt.bgp.neighbor_list(hostname)          # Вернет list=[] содержащий dict={}. [{name='', import='', export=''}, {}, {}] 
+nt.bgp.neighbor_list(hostname)          # Вернет list=[] содержащий dict={}. 
 ```
 
 
