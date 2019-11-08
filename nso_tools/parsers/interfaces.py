@@ -134,8 +134,10 @@ class NsoInterfaceParser():
                     gi_list = root.devices.device[hostname]['config']['ios:interface']['GigabitEthernet']
                     te_list = root.devices.device[hostname]['config']['ios:interface']['TenGigabitEthernet']
                     
+                    po_su_list = root.devices.device[hostname]['config']['ios:interface']['Port-channel-subinterface']['Port-channel']
+                    
                     # Регистрируем 
-                    interface_range = [vlan_list, lo_list, po_list, gi_list, te_list]
+                    interface_range = [vlan_list, lo_list, po_list, gi_list, te_list, po_su_list]
                     
                     # Список в который добавляем интерфейсы, который вернется как рузультат работы метода
                     device_interfaces = []    
